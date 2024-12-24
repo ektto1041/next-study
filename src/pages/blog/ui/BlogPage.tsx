@@ -1,7 +1,14 @@
+import { Car } from "@/src/entities/car";
 import Image from "next/image";
 import Link from "next/link";
 
-export function BlogPage() {
+export async function BlogPage() {
+  const response = await fetch(
+    "https://674e6222635bad45618e70e6.mockapi.io/cars"
+  );
+
+  const cars: Car[] = await response.json();
+
   return (
     <>
       <h1>Blog Page</h1>
@@ -13,7 +20,12 @@ export function BlogPage() {
         placeholder="blur"
         blurDataURL="/image-placeholder.png"
       />
-      <Link href={`/blog/3`}>#3</Link>
+      {cars &&
+        cars.map((car, i) => (
+          <div key={i}>
+            <Link href={`/blog/${car.id}`}>#{car.id}</Link>
+          </div>
+        ))}
     </>
   );
 }
