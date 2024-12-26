@@ -1,6 +1,7 @@
 import { Car } from "@/src/entities/car";
 import Image from "next/image";
 import Link from "next/link";
+import { ClientLink } from "./ClientLink";
 
 export async function BlogPage() {
   const response = await fetch(
@@ -23,7 +24,12 @@ export async function BlogPage() {
       {cars &&
         cars.map((car, i) => (
           <div key={i}>
-            <Link href={`/blog/${car.id}`}>#{car.id}</Link>
+            <div>
+              <Link href={`/blog/${car.id}`}>#{car.id}</Link>
+            </div>
+            <div>
+              <ClientLink carId={car.id} />
+            </div>
           </div>
         ))}
     </>
