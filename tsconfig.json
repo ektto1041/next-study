@@ -21,7 +21,8 @@
     "paths": {
       "@/*": ["./*"],
       "@pages/*": ["./src/pages/*"],
-      "@entities/*": ["./src/entities/*"]
+      "@entities/*": ["./src/entities/*"],
+      "@shared/*": ["./src/shared/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
