@@ -1,2 +1,2 @@
-export type { Car } from "./model/types";
+export type { Car, CarForm } from "./model/types";
 export { CarItem } from "./ui/CarItem";

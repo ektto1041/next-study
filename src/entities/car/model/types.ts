@@ -3,3 +3,5 @@ export interface Car {
   name: string;
   dist: number;
 }
+
+export type CarForm = Omit<Car, "id">;
