@@ -7,7 +7,7 @@ export async function joinAction(
   formData: FormData
 ): Promise<{ message: string }> {
   try {
-    const response = await fetch("http://localhost:8080/join", {
+    const response = await fetch("http://localhost:3000/api", {
       method: "POST",
       body: formData,
     });
